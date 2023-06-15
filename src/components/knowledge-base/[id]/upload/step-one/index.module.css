@@ -1,0 +1,124 @@
+.stepHeader {
+  /* position: sticky;
+  top: 0;
+  left: 0; */
+  padding: 42px 64px 12px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  @apply text-slate-200;
+}
+
+.form {
+  padding: 12px 64px;
+}
+
+.dataSourceTypeList {
+  @apply flex items-center mb-8;
+}
+
+.dataSourceItem {
+  @apply box-border relative shrink-0 flex items-center mr-3 p-3 h-14 bg-background rounded-xl cursor-pointer;
+  @apply border-border border-[1px] text-slate-200;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.dataSourceItem:hover {
+  @apply bg-brand-3;
+  box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08),
+    0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+}
+
+/* {
+  @apply bg-brand-6 border-brand-9; */
+/* background-color: #f5f8ff; */
+/* border: 1.5px solid #528bff; */
+/* box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1),
+    0px 1px 2px rgba(16, 24, 40, 0.06);
+} */
+
+.dataSourceItem.disabled {
+  @apply bg-background border-border border-[1px] text-slate-500;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  cursor: default;
+}
+
+.dataSourceItem.disabled:hover {
+  @apply bg-background border-border border-[1px] text-slate-500;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.comingTag {
+  @apply bg-background border-border border-[1px] text-slate-200;
+  @apply flex justify-center items-center bg-background;
+  position: absolute;
+  right: 8px;
+  top: -10px;
+  padding: 1px 6px;
+  height: 20px;
+  /* border: 1px solid #e0eaff; */
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: #444ce7;
+}
+
+.datasetIcon {
+  @apply flex mr-2 w-8 h-8 rounded-lg bg-center bg-no-repeat;
+  /* @apply border-border border-[0.5px]; */
+  /* background-color: #f5faff; */
+  /* background-image: url(../assets/file.svg); */
+  /* background-size: 16px; */
+  /* border: 0.5px solid #d1e9ff; */
+}
+
+.dataSourceItem.active,
+.datasetIcon.active {
+  @apply bg-brand-6 border-brand-9;
+  /* background-color: #f5f8ff; */
+  /* border: 0.5px solid #e0eaff; */
+  box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1),
+    0px 1px 2px rgba(16, 24, 40, 0.06);
+}
+
+.datasetIcon.notion {
+  background-image: url(../assets/notion.svg);
+  background-size: 20px;
+}
+
+.datasetIcon.web {
+  background-image: url(../assets/web.svg);
+}
+
+.submitButton {
+  width: 120px;
+}
+
+.dividerLine {
+  margin: 32px 0;
+  max-width: 640px;
+  height: 1px;
+  @apply bg-border h-[1px];
+}
+
+.OtherCreationOption {
+  @apply flex items-center cursor-pointer;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  color: #155eef;
+}
+
+.OtherCreationOption::before {
+  content: '';
+  display: block;
+  margin-right: 4px;
+  width: 16px;
+  height: 16px;
+  background: center no-repeat url(../assets/folder-plus.svg);
+  background-size: contain;
+}

@@ -1,0 +1,7 @@
+.input {
+  @apply inline-flex h-7 w-full py-1 px-2 rounded-lg text-xs leading-normal;
+  @apply bg-bg caret-primary-600 hover:bg-brand-6 focus:ring-1 focus:ring-inset focus:ring-border focus-visible:outline-none focus:bg-brand-8 placeholder:text-slate-500;
+}
+.prefix {
+  @apply whitespace-nowrap absolute left-2 self-center;
+}

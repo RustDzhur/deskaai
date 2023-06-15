@@ -1,0 +1,418 @@
+/*@import '~antd/dist/antd.min.css';*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* // https://ui.shadcn.com/docs/installation */
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+/* * {
+  box-sizing: border-box;
+} */
+
+html,
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, san-serif;
+  font-weight: 400;
+  margin: 0;
+  @apply bg-black;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add custom styles here */
+.TextArea--transparent,
+.TextArea--transparent:hover,
+.TextArea--transparent:focus,
+.TextArea--transparent:active,
+.TextArea--transparent > textarea,
+.TextArea--transparent > textarea:hover,
+.TextArea--transparent > textarea:focus,
+.TextArea--transparent > textarea:active {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  resize: none;
+}
+
+.Text--markdown {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.Text--markdown a {
+  text-decoration: underline;
+}
+
+.Text--markdown p:not(:first-child) {
+  margin-top: 4px;
+}
+
+.Text--white {
+  color: #fff;
+}
+
+.Text--white.ant-typography-secondary {
+  color: rgba(250, 250, 250, 0.8);
+}
+
+.ant-typography {
+  @apply text-slate-200 !important;
+}
+
+.Text--white > h1,
+.Text--white > h2,
+.Text--white > h3,
+.Text--white > h4,
+.Text--white > h5,
+.Text--white > h6,
+.Text--white a {
+  color: #fff;
+}
+
+.Button--faded {
+  opacity: 0.6;
+}
+
+.Button--faded:hover {
+  opacity: 1;
+}
+
+/* Mimic behavior of antd "text"-type Button */
+a.RelatedCustomerConversation--link {
+  display: block;
+  color: rgba(0, 0, 0, 0.45);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+a.RelatedCustomerConversation--link:hover {
+  background: rgba(0, 0, 0, 0.018);
+}
+
+/* Replayer */
+#SessionPlayer .replayer-wrapper {
+  left: auto !important;
+  top: auto !important;
+}
+
+.replayer-wrapper > iframe {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 24px 48px rgba(17, 16, 62, 0.12);
+}
+
+/* Wrapper class for antd Upload component style overrides */
+.AttachFileButton {
+  display: flex;
+  flex-direction: column-reverse;
+  float: left;
+}
+
+.AttachFileButton .ant-upload-list.ant-upload-list-text {
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
+}
+
+.AttachFileButton .ant-upload-list-item {
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+.GettingStartedCode .ant-tabs-nav::before {
+  border-bottom-color: #d9d9d9;
+}
+
+.GettingStartedCode .ant-tabs-nav .ant-tabs-tab {
+  border-color: #d9d9d9;
+}
+
+.ConversationsSearchInput {
+  @apply border-brand-6 border-solid border-[1px] bg-background;
+  border-right: none;
+  /* border-bottom: none; */
+  border-left: none;
+}
+
+.ConversationsSearchInput:hover,
+.ConversationsSearchInput:active,
+.ConversationsSearchInput:focus {
+  /* @apply border-brand-6; */
+}
+
+.ant-input {
+  /*// no border*/
+  @apply border-none outline-none bg-background text-brand-12 placeholder:text-brand-11 !important;
+}
+
+.ant-input-affix-wrapper {
+  @apply bg-background border-none outline-none !important;
+}
+
+.ConversationsSearchInput.ant-input-affix-wrapper:focus,
+.ant-input-affix-wrapper-focused {
+  @apply shadow-sm bg-background;
+}
+
+.ConversationsSearchInput .ant-btn {
+  @apply border-none outline-none text-slate-300 bg-background !important;
+}
+
+.ConversationsSearchInput .ant-input-clear-icon {
+  @apply text-slate-300;
+}
+.ConversationsSearchInput .ant-input-search-icon::before {
+  @apply border-l border-brand-6;
+}
+
+.Dashboard-Sider {
+  /*background: #000c17;*/
+  background: var(--background);
+}
+
+.Dashboard-Sider ul.ant-menu.ant-menu-dark,
+.Dashboard-Sider ul.ant-menu.ant-menu-dark .ant-menu-sub {
+  background: transparent;
+}
+
+/*.ant-table-cell {*/
+/*  background: var(--bg);*/
+/*  color: white ;*/
+/*}*/
+
+/*----------*/
+body {
+  @apply text-slate-50;
+}
+
+.ant-typography {
+  @apply text-slate-50;
+}
+
+.ant-menu-item-selected {
+  @apply bg-brand-6 text-brand-12 !important;
+}
+
+.ant-result,
+.ant-result-title,
+.ant-result-subtitle {
+  @apply text-slate-50 !important;
+}
+
+.ant-button {
+  @apply border-border border-[1px] text-slate-200 !important;
+}
+
+.ant-button:hover {
+  @apply text-primary-foreground border-primary-foreground !important;
+}
+
+.ant-mentions .rc-textarea {
+  @apply text-slate-200;
+}
+
+.ant-mentions .ant-mentions-note .rc-textarea {
+  @apply text-slate-700 !important;
+}
+
+.ant-btn-default {
+  @apply bg-background border-border border-[1px] !important;
+  @apply hover:bg-background/80 hover:border-border/80 !important;
+  @apply text-slate-200 !important;
+}
+
+.ant-btn-primary {
+  @apply bg-primary border-border border-[1px] !important;
+  @apply hover:bg-primary/80 hover:border-primary/80 !important;
+  @apply text-primary-foreground !important;
+}
+
+.ant-btn-icon-only {
+  @apply bg-background !important;
+  @apply text-slate-200 !important;
+}
+
+.ant-notification-notice-message {
+  @apply text-slate-200 !important;
+}
+
+.ant-notification-notice-closable {
+  @apply bg-background border-border border-[1px] !important;
+  @apply rounded-md border bg-transparent px-3 text-sm 
+    font-medium ring-offset-background transition-colors 
+    hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 
+    disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-destructive/30 
+    group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive 
+    group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive;
+}
+
+.ant-input {
+  @apply bg-background border-border border-[1px] !important;
+  @apply text-slate-200 !important;
+}
+
+.ant-notification-notice-close {
+  @apply text-slate-200 !important;
+  @apply hover:bg-brand-6 !important;
+  @apply bg-background !important;
+}
+
+/* .ant-select {
+  @apply bg-background border-border border-[1px] !important;
+  @apply text-slate-200 !important;
+} */
+
+/* .ant-table-cell {
+  @apply text-slate-400 !important;
+  background-color: rgb(17 17 17) !important;
+} */
+
+._ant-table-action-btn {
+  @apply bg-white text-slate-800 hover:text-blue-500 hover:border-blue-500 hover:bg-white  !important;
+}
+
+.ant-pagination-item-link {
+  @apply bg-white text-slate-800 hover:text-blue-500 hover:border-blue-500 hover:bg-white  !important;
+}
+
+.ant-pagination-item-link:disabled {
+  @apply bg-white/50 !important;
+}
+
+.ant-select-selector {
+  @apply bg-background border-border border-[1px] !important;
+  @apply text-slate-200 !important;
+}
+
+.ant-select-selection-item {
+  @apply text-slate-200 !important;
+}
+
+.ant-select-selection-item-remove {
+  @apply text-slate-200 !important;
+}
+
+.ant-select-dropdown {
+  @apply bg-background border-border border-[1px] !important;
+  @apply rounded-md border bg-transparent px-3 text-sm 
+    font-medium ring-offset-background transition-colors 
+    hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 
+    disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-destructive/30 
+    group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive 
+    group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive;
+}
+
+.ant-select-selection-placeholder {
+  @apply text-slate-500 !important;
+}
+
+.rc-virtual-list {
+  @apply bg-background !important;
+}
+
+.ant-select-item-option {
+  @apply bg-background text-slate-200 !important;
+  @apply border-none;
+}
+
+.ant-select-item-option-active {
+  @apply bg-brand-6 !important;
+}
+
+/* // tailwind border inset */
+
+.ant-modal-header,
+.ant-modal-title {
+  @apply bg-background text-slate-200 !important;
+}
+
+.ant-modal {
+  @apply rounded-md border bg-transparent
+    hover:bg-secondary focus:outline-none focus:ring-2;
+}
+.ant-modal-content {
+  @apply bg-background border-border border-[1px] text-slate-200 !important;
+}
+
+.ant-modal-close {
+  @apply text-slate-200 !important;
+  @apply hover:bg-brand-6 !important;
+  @apply bg-background !important;
+}
+
+._ant-input {
+  @apply bg-background border-border border-[1px] rounded-md !important;
+  @apply text-slate-200 !important;
+}
+
+.ant-switch-inner {
+  @apply bg-input border border-[1px];
+}
+
+.ant-switch-checked > .ant-switch-inner {
+  @apply bg-primary/50;
+}
+
+.ant-tabs-tab-btn {
+  @apply text-slate-200 !important;
+}
+
+.ant-tabs-tab {
+  @apply text-slate-200 border-border !important;
+}
+
+.ant-tabs-tab-active {
+  @apply bg-brand-6 !important;
+}
+
+.ant-table-content {
+  background: hsl(var(--bg)) !important;
+  @apply text-slate-200 !important;
+}
